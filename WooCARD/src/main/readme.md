@@ -7,10 +7,6 @@ drop sequence board_seq;
 drop sequence card_seq;
 drop sequence event_seq;
 drop sequence noticeboard_seq;
-
-
---카드,이벤트 (규성희)--------------------------------------------------------------------------------------
-
 drop table card;
 drop SEQUENCE card_seq;
 drop table event;
@@ -143,9 +139,7 @@ insert into cardmember values('admin', '1234', '운영자', 'm','admin@admin.com
 insert into cardmember values('user', '1234', '일반회원', 'f','user@naver.com','a');
 select * from CARDMEMBER;
 commit;
--------------------------------------------------------------------------------------------------------
 
---노티스보드(건우) 테이블------------------------------------------------------------------------
 
 create table noticeboard(
 NUM                NUMBER(5),          
@@ -166,7 +160,7 @@ insert into NOTICEBOARD(num,title,userid,content) values(NOTICEBOARD_SEQ.NEXTVAL
 insert into NOTICEBOARD(num,title,userid,content) values(NOTICEBOARD_SEQ.NEXTVAL,'네번째공지사항','admin','네번째공지사항입니다');
 insert into NOTICEBOARD(num,title,userid,content) values(NOTICEBOARD_SEQ.NEXTVAL,'다섯번째공지사항','admin','다섯번째공지사항입니다');
 
---고객게시판(우승) 테이블---------------------------------------------------------------------------
+
 create table Customerboard(
 NUM                NUMBER(5),          
 TITLE              VARCHAR2(100),   
@@ -213,7 +207,7 @@ select * from customerboard;
 delete from customerboard ;
 -------------------------------------------------------------------------------------------------------
 
---위시리스트(연정)--------------------------------------------------------------------------------
+
 create table wishlist ( userid varchar2(30), cardnum number(3,0));
 desc wishlist;
 -------------------------------------------------------------------------------------------------------
